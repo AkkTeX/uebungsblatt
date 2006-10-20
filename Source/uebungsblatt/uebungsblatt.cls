@@ -1,5 +1,5 @@
 %=====================================================================================================================================
-% Class uebungsblatt by Igor Akkerman (c)2004
+% Class uebungsblatt by Igor Akkerman (c)2004,2005,2006
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License (latest version).
@@ -12,7 +12,7 @@
 %     - uebungsblatt.sty
 %=====================================================================================================================================
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{uebungsblatt}[2005/04/27 by Igor Akkerman (c)2004 v1.3.1 Klasse zum Setzen von Uebungsblaettern]
+\ProvidesClass{uebungsblatt}[2006/10/20 by Igor Akkerman (c)2004,2005,2006 v1.4.0 Klasse zum Setzen von Uebungsblaettern]
 %=====================================================================================================================================
 
 % Dokumentklassen-Optionen:
