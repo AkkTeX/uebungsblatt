@@ -60,6 +60,13 @@
 %--------------------------
 
 %--------------------------
+% teilteilaufgabe (Zaehler)
+% Nummer der aktuellen Teilaufgabe
+%--------------------------
+\newcounter{teilteilaufgabe}
+%--------------------------
+
+%--------------------------
 % @inhead (boolean)
 % true, wenn gerade im Übungsblatt-Kopf gearbeitet wird (inhead-Modus); false sonst
 %--------------------------
@@ -80,18 +87,32 @@
 %--------------------------
 % \blatttitel{<titel>}
 % Setzt den Blatttitel auf <titel>.
-% Zum Zeilenumbruch wird \\ verwendet.
 % Der Titel wird im Kopf und bei Beginn des Übungsblatts verwendet.
 % Optional kann im Text '\ifinhead{<danntext>}{<sonsttext>}' eingefügt werden,
 % was <danntext> lediglich im Kopf an der Stelle erzeugt, ansonsten wird der <sonsttext> erzeugt
+% Zum Zeilenumbruch im Kopf wird \\ verwendet.
 % Default: Bearbeitung des \theblatt.~Übungsblatts\ifinhead{\\}{}
 %--------------------------
 \newcommand \@blatttitel {}%
 \newcommand \blatttitel[1] {%
-    \renewcommand \@blatttitel {\textbf{#1}}%
-    \chead{\@inhead{\@blatttitel}}%
+    \renewcommand \@blatttitel {#1}%
 }
 %--------------------------
+
+%--------------------------
+% \@blattuntertitel
+% Liefert den aktuellen Untertitel des Übungsblatts.
+%--------------------------
+% \blattuntertitel{<untertitel>}
+% Setzt den Blattuntertitel auf <untertitel>.
+% Default: Bearbeitung des \theblatt.~Übungsblatts\ifinhead{\\}{}
+%--------------------------
+\newcommand \@blattuntertitel {}%
+\newcommand \blattuntertitel[1] {%
+    \renewcommand \@blattuntertitel {#1}%
+}
+%--------------------------
+
 
 %--------------------------
 % \lvname{<lvname>}

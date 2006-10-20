@@ -12,7 +12,7 @@
 %     - uebungsblatt.sty
 %=====================================================================================================================================
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{uebungsblatt}[2004/06/12 by Igor Akkerman (c)2004 v1.3.0 Klasse zum Setzen von Uebungsblaettern]
+\ProvidesClass{uebungsblatt}[2005/04/27 by Igor Akkerman (c)2004 v1.3.1 Klasse zum Setzen von Uebungsblaettern]
 %=====================================================================================================================================
 
 % Dokumentklassen-Optionen:
@@ -50,6 +50,16 @@
 %--------------------------
 % \teilaufgabe
 % beginnt eine neue Teilaufgabe
+%--------------------------
+
+%--------------------------
+% \begin{teilteilaufgaben}{<teilteilaufgabenlabelmuster>} ... \end{teilteilaufgaben}
+% Liste der Teilteilaufgaben
+%--------------------------
+
+%--------------------------
+% \teilteilaufgabe
+% beginnt eine neue Teilteilaufgabe
 %--------------------------
 
 % -------------------------------
@@ -123,10 +133,15 @@
 \newboolean{aufgeqno}
 
 \AtBeginDocument{%
+    \chead{\@inhead{\textbf{\@blatttitel}}}%
     \addtocounter{aufgabe}{-1}% Aufgabennummer zurücksetzen
     \vspace*{-\baselineskip}%
     \par%
-    \begin{Large}\hspace*{\fill}\@blatttitel\hspace*{\fill}\end{Large}%
+    \hspace*\fill\begin{Large}\textbf{\@blatttitel}\end{Large}\hspace*\fill%
+    \ifset{\@blattuntertitel}{%
+    	\\[.5\baselineskip]%
+         \hspace*\fill\begin{large}\textbf{\@blattuntertitel}\end{large}\hspace*\fill%
+    }%
     \par%
 }
 
@@ -141,7 +156,8 @@
 \ProcessOptions
 
 % Laden von Paketen
-\LoadClass[widepage,longpage]{akkgermantecdoc}
+\LoadClass[widepage,longpage]{akktecdoc}
+\RequirePackage{akkgerman}
 \RequirePackage{uebungsblatt}
 \ifthenelse{\boolean{aufgeqno}} {%
     \RequirePackage{amsmath}%
