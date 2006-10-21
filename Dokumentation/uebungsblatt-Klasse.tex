@@ -1,4 +1,5 @@
-\documentclass{akkgermantecdoc}
+\documentclass{akktecdoc}
+\usepackage{akkgerman}
 
 %\makeatletter
 %\show\@verbatim
@@ -6,7 +7,7 @@
 \newcommand \AkkTeX {\textsc{A\hspace{-0.2em}k\hspace{-0.2em}k}\hspace{-0.2em}\TeX}
 \newcommand \uebb {\textsf{uebungsblatt}}
 \newcommand \filename[1] {\textit{#1}}
-\newcommand \bzw \tbzw
+\renewcommand \bzw \tbzw
 \newcommand \url[1] {\textsl{#1}}
 
 \hyphenation{Re-dun-danz}
@@ -62,9 +63,10 @@ Die Datei \filename{lv.tex} wird bei jedem Übungsblatt automatisch vollständig e
 Die Datei für statische Informationen \emph{muss} den Namen \filename{lv.tex} tragen. Sie kann sich entweder im selben Verzeichnis befinden wie die Dokumentdatei selbst oder aber im übergeordneten Verzeichnis.
 
 \section{Das Übungsblatt}
-Die Dokumentdatei ist jene Datei, die den Übungsblatt"=Inhalt enthält und deren Name an das \filename{latex}"=Programm übergeben wird. Wenn der Dateiname die Übungsblatt"=Nummer enthält (\zb \filename{blatt01.tex}), wird diese automatisch in den Zähler \verb/blatt/ übernommen. Enthält der Titel wie in unserem Beispiel das Kommando \verb/\theblatt/, erscheint in jedem Übungsblatt automatisch die korrekte Nummer und man braucht sie nicht bei jedem Übungsblatt neu einzutragen. Führende Nullen werden ignoriert.
+Die Dokumentdatei ist jene Datei, die den Übungsblatt"=Inhalt enthält und deren Name an das \filename{latex}"=Programm übergeben wird.
 
-Dadurch enthält die Dokumentdatei kaum Overhead:
+\subsection{Dateistruktur}
+Die Dokumentklasse wurde so entworfen, dass die Dokumentdatei kaum Overhead enthält:
 \begin{verbatim}
 \documentclass{uebungsblatt}
 \begin{document}
@@ -73,7 +75,18 @@ Dadurch enthält die Dokumentdatei kaum Overhead:
 \end{verbatim}
 Dies erzeugt ein Übungsblatt mit dem Inhalt, der innerhalb der \verb/document/"=Umgebung steht. Der Inhalt ist beliebiger \LaTeX"=Code.
 
-Soll die Nummer des Übungsblatts nicht im Dateinamen vorkommen, kann man sie in jedem Übungsblatt mit \verb/blattnummer{<blattnummer>}/ auch einzeln setzen.
+\subsection{Automatische Blattnummerierung}
+Wenn der Dateiname die Übungsblatt"=Nummer enthält (\zb \filename{blatt01.tex}), wird diese automatisch in den Zähler \verb/blatt/ übernommen. Enthält der Titel wie in unserem Beispiel das Kommando \verb/\theblatt/, erscheint in jedem Übungsblatt automatisch die korrekte Nummer und man braucht sie nicht bei jedem Übungsblatt neu einzutragen. Führende Nullen werden ignoriert.
+
+Kommt die Nummer des Übungsblatts nicht im Dateinamen vor, kann man sie in jedem Übungsblatt mit \verb/blattnummer{<blattnummer>}/ auch einzeln setzen.
+
+\subsection{Untertitel}
+Jedes Übungsblatt kann einen eigenen Untertitel enthalten, beispielsweise das Thema des aktuellen Blatts.
+Der Untertitel erscheint in kleinerer Schrift unter dem Titel des Blatts.
+Der Untertitel wird in der Präambel einer Übungsblatt"=Datei wie folgt definiert:
+\begin{verbatim}
+\blattuntertitel{Eigene Kommandos und Umgebungen}
+\end{verbatim}
 
 \section{Aufgaben}
 \subsection{Umgebung für Aufgaben}
@@ -203,10 +216,8 @@ Vielen Dank allen Helfern in den \TeX"=Newsgroups \url{comp.text.tex} und vor al
 
 Vielen Dank an Helmut Kopka, Michel Goossens, Frank Mittelbach, Alexander Samarin und Karsten Günther für ausgezeichnete \LaTeX"=Literatur.
 
-Und natürlich vielen Dank meiner geliebten Sonne Oktavia für ihre Geduld, liebevolle Unterstützung und musikalische Untermalung. \verb/*-: khi :-*/
-
 \section{Lizenz}
-Class and Package \uebb{} by Igor Akkerman (c)2000,2001,2002,2003,2004
+Class and Package \uebb{} by Igor Akkerman (c)2000,2001,2002,2003,2004,2005,2006
 
 This work may be distributed and/or modified under the
 conditions of the \LaTeX{} Project Public License (latest version).
