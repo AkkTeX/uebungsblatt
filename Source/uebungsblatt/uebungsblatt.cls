@@ -6,13 +6,9 @@
 %
 % The latest version of this license can be found at
 %     http://www.latex-project.org/lppl.txt
-%
-% This work consists of the following files:
-%     - uebungsblatt.cls
-%     - uebungsblatt.sty
 %=====================================================================================================================================
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{uebungsblatt}[2006/10/20 by Igor Akkerman (c)2004,2005,2006 v1.4.0 Klasse zum Setzen von Uebungsblaettern]
+\ProvidesClass{uebungsblatt}[2006/10/24 by Igor Akkerman (c)2004,2005,2006 v1.5.0 Klasse zum Setzen von Uebungsblaettern]
 %=====================================================================================================================================
 
 % Dokumentklassen-Optionen:
