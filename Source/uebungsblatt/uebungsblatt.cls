@@ -19,6 +19,9 @@
 %     aufgeqno - In Gleichungsnummern soll die Aufgabennummer auftauchen (<Aufgabennummer>.<Gleichungsnummer>)
 %     fleqn    - Gleichungen werden nicht zentriert sondern linksbündig angezeigt
 %     leqno    - Gleichungsnummern werden nicht rechts sondern links von der Gleichung angezeigt
+%     10pt     - Schriftgröße: 10pt (Standard)
+%     11pt     - Schriftgröße: 11pt
+%     12pt     - Schriftgröße: 12pt
 
 %--------------------------
 % \begin{aufgabe} ... \end{aufgabe}
@@ -151,6 +154,9 @@
 
 % Deklaration von Optionen
 \DeclareOption{aufgeqno} {\setboolean{aufgeqno}{true}}%
+\DeclareOption{10pt} {\PassOptionsToClass{10pt}{akktecdoc}}%
+\DeclareOption{11pt} {\PassOptionsToClass{11pt}{akktecdoc}}%
+\DeclareOption{12pt} {\PassOptionsToClass{12pt}{akktecdoc}}%
 
 % Ausfuehrung von Optionen
 \ProcessOptions
