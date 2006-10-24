@@ -153,10 +153,10 @@
 }
 
 % Deklaration von Optionen
-\DeclareOption{aufgeqno} {\setboolean{aufgeqno}{true}}%
-\DeclareOption{10pt} {\PassOptionsToClass{10pt}{akktecdoc}}%
-\DeclareOption{11pt} {\PassOptionsToClass{11pt}{akktecdoc}}%
-\DeclareOption{12pt} {\PassOptionsToClass{12pt}{akktecdoc}}%
+\DeclareOption {aufgeqno} {\setboolean{aufgeqno}{true}}%
+\DeclareOption {10pt}     {\PassOptionsToClass{10pt}{akktecdoc}}%
+\DeclareOption {11pt}     {\PassOptionsToClass{11pt}{akktecdoc}}%
+\DeclareOption {12pt}     {\PassOptionsToClass{12pt}{akktecdoc}}%
 
 % Ausfuehrung von Optionen
 \ProcessOptions
